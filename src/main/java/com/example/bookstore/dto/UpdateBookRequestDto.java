@@ -2,6 +2,9 @@ package com.example.bookstore.dto;
 
 import com.example.bookstore.validation.Isbn;
 import java.math.BigDecimal;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
@@ -10,6 +13,7 @@ public class UpdateBookRequestDto {
     private String author;
     @Isbn
     private String isbn;
+    @Positive(message = "price must be positive")
     private BigDecimal price;
     private String description;
     private String coverImage;
